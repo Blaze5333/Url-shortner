@@ -1,12 +1,12 @@
-version: "1"
-
 services:
   api:
-    build: api
+    build: apis
     ports:
       - "3000:3000"
     depends_on:
       - db
+    env_file:
+      - apis/.env
 
   db:
     build: db
